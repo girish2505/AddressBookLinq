@@ -9,9 +9,11 @@ namespace AddressBookLinq
             Console.WriteLine("Address Book System using Linq");
  
             ContactDataManager contactDataManager = new ContactDataManager();
-            contactDataManager.CreateDataTable();
-            contactDataManager.AddValues();
+            //contactDataManager.CreateDataTable();
+            //contactDataManager.AddValues();
+            contactDataManager.ModifyDataTableUsingName("eswar", "LastName");
             contactDataManager.Display();
+            
         }
     }
 }

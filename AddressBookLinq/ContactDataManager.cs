@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace AddressBookLinq
@@ -106,6 +107,19 @@ namespace AddressBookLinq
             dtRow["Email"] = contactDataManager.emailId;
             dataTable.Rows.Add(dtRow);
 
+        }
+        
+        public bool ModifyDataTableUsingName(string FirstName, string ColumnName)
+        {
+            AddValues();
+            var modifiedList = (from Contact in dataTable.AsEnumerable() where Contact.Field<string>("FirstName") == FirstName select Contact).LastOrDefault();
+            if (modifiedList != null)
+            {
+                modifiedList[ColumnName] = "padarthi";
+                Display();
+                return true;
+            }
+            return false;
         }
         public void Display()
         {
