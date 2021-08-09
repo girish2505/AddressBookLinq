@@ -13,9 +13,9 @@ namespace AddressBookLinq
             //contactDataManager.AddValues();
             //contactDataManager.ModifyDataTableUsingName("eswar", "LastName");
             //contactDataManager.DeleteRecordUsingName("abc");
-            contactDataManager.RetrieveData("nellore","telengana");
+            //contactDataManager.RetrieveData("nellore","telengana");
             //contactDataManager.Display();
-            
+            contactDataManager.CountBasedOnCityorState();
         }
     }
 }
