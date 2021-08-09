@@ -11,7 +11,8 @@ namespace AddressBookLinq
             ContactDataManager contactDataManager = new ContactDataManager();
             //contactDataManager.CreateDataTable();
             //contactDataManager.AddValues();
-            contactDataManager.ModifyDataTableUsingName("eswar", "LastName");
+            //contactDataManager.ModifyDataTableUsingName("eswar", "LastName");
+            contactDataManager.DeleteRecordUsingName("abc");
             contactDataManager.Display();
             
         }

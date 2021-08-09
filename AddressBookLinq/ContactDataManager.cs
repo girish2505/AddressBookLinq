@@ -91,6 +91,15 @@ namespace AddressBookLinq
             DataManager1.zipCode = 531678;
             InsertintoDataTable(DataManager1);
 
+            DataManager1.firstName = "abc";
+            DataManager1.lastName = "xyz";
+            DataManager1.phoneNumber = 8975214458;
+            DataManager1.emailId = "abc@gmail.com";
+            DataManager1.address = "abc xyz";
+            DataManager1.city = "cde";
+            DataManager1.state = "wwe";
+            DataManager1.zipCode = 543212;
+            InsertintoDataTable(DataManager1);
             return dataTable.Rows.Count;
         }
        
@@ -116,6 +125,19 @@ namespace AddressBookLinq
             if (modifiedList != null)
             {
                 modifiedList[ColumnName] = "padarthi";
+                Display();
+                return true;
+            }
+            return false;
+        }
+        public bool DeleteRecordUsingName(string FirstName)
+        {
+            AddValues();
+            var modifiedList = (from Contact in dataTable.AsEnumerable() where Contact.Field<string>("FirstName") == FirstName select Contact).FirstOrDefault();
+            if (modifiedList != null)
+            {
+                modifiedList.Delete();
+                Console.WriteLine("*After Deletion");
                 Display();
                 return true;
             }
