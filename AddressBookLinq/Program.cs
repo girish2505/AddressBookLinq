@@ -15,7 +15,8 @@ namespace AddressBookLinq
             //contactDataManager.DeleteRecordUsingName("abc");
             //contactDataManager.RetrieveData("nellore","telengana");
             //contactDataManager.Display();
-            contactDataManager.CountBasedOnCityorState();
+            //contactDataManager.CountBasedOnCityorState();
+            contactDataManager.Sort("andhra");
         }
     }
 }

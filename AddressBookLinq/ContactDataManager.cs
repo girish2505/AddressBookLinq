@@ -77,7 +77,7 @@ namespace AddressBookLinq
             DataManager.emailId = "girish@gimail.com";
             DataManager.address = "bazar Street";
             DataManager.city = "nellore";
-            DataManager.state = "Andhra";
+            DataManager.state = "andhra";
             DataManager.zipCode = 524406;
             InsertintoDataTable(DataManager);
 
@@ -186,7 +186,26 @@ namespace AddressBookLinq
             }
             Console.WriteLine(result);
             return result;
-
+        }
+        public string Sort(string CityName)
+        {
+            AddValues();
+            string result = null;
+            var modifiedRecord = (from Contact in dataTable.AsEnumerable() orderby Contact.Field<string>("FirstName") where Contact.Field<string>("City") == CityName select Contact);
+            Console.WriteLine("After Sorting Their Name For a given city");
+            foreach (var dtRows in modifiedRecord)
+            {
+                if (dtRows != null)
+                {
+                    Console.WriteLine("{0} \t {1} \t {2} \t {3} \t {4} \t {5} \t {6} \t {7}\n", dtRows["FirstName"], dtRows["LastName"], dtRows["Address"], dtRows["City"], dtRows["State"], dtRows["Zip"], dtRows["PhoneNumber"], dtRows["Email"]);
+                    result += dtRows["FirstName"] + " ";
+                }
+                else
+                {
+                    result = null;
+                }
+            }
+            return result;
         }
         public void Display()
         {
