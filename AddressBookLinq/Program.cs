@@ -16,7 +16,8 @@ namespace AddressBookLinq
             //contactDataManager.RetrieveData("nellore","telengana");
             //contactDataManager.Display();
             //contactDataManager.CountBasedOnCityorState();
-            contactDataManager.Sort("andhra");
+            //contactDataManager.Sort("andhra");
+            contactDataManager.CountBasedOnContactType();
         }
     }
 }
